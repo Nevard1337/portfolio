@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jane Doe — Architecture & Design</title>
+  <style>
+    /* Minimalist Architecture CSS */
+    :root {
+      --bg: #fafafa;
+      --text: #111111;
+      --muted: #767676;
+      --max-width: 1400px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    header {
+      margin-bottom: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid #e5e5e5;
+      padding-bottom: 24px;
+    }
+
+    .brand h1 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .brand p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      margin-left: 20px;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    /* Clean Image Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .gallery-item {
+      cursor: pointer;
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      display: block;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.02);
+      opacity: 0.92;
+    }
+
+    .gallery-item .caption {
+      padding-top: 8px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e5e5;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(255, 255, 255, 0.95);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand">
+        <h1>Jane Doe</h1>
+        <p>Architectural Works & Spatial Design</p>
+      </div>
+      <nav>
+        <a href="#work">Work</a>
+        <a href="mailto:your-email@domain.com">Contact</a>
+      </nav>
+    </header>
+
+    <main class="gallery" id="work">
+      <!-- Item 1 -->
+      <div class="gallery-item" onclick="openLightbox('project1.jpg')">
+        <img src="project1.jpg" alt="Pavilion Structure">
+        <div class="caption">01. Concrete Pavilion — 2025</div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="gallery-item" onclick="openLightbox('project2.jpg')">
+        <img src="project2.jpg" alt="Interior Study">
+        <div class="caption">02. Daylight Interior Study</div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="gallery-item" onclick="openLightbox('project3.jpg')">
+        <img src="project3.jpg" alt="Urban Site Model">
+        <div class="caption">03. Timber Site Model</div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="gallery-item" onclick="openLightbox('project4.jpg')">
+        <img src="project4.jpg" alt="Residential Elevation">
+        <div class="caption">04. Hillside Residence</div>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2026 Jane Doe</span>
+      <span>Built with GitHub Pages</span>
+    </footer>
+  </div>
+
+  <!-- Fullscreen Photo Viewer -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Full view">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
