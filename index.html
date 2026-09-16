@@ -193,6 +193,11 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr); /* 2 side-by-side images on PC */
       gap: 15px; /* Spacing between the two detail photos */
+      align-content: start;
+    }
+    .gallery-pair .caption{
+      font-size: 0.75rem;
+      margin-top: 5px;
     }
 
     /* Mobile Responsive Tweaks */
@@ -206,7 +211,7 @@
       }
       .gallery-pair {
         grid-template-columns: 1fr; /* Stacks close-ups into 1 per row on phone */
-        gap: 30px;
+        gap: 25px;
       }
       header {
         padding: 20px;
@@ -263,6 +268,16 @@
       </div>
     </div>
 
+        <!-- Detail B -->
+    <div class="gallery-item" onclick="openLightbox('WebP Images/13.webp', 'Detail View C')">
+      <div class="image-wrapper">
+        <img src="WebP Images/13.webp" alt="Detail C">
+      </div>
+      <div class="caption">
+        <span class="title">Detail C</span>
+      </div>
+    </div>
+
   </div>
 
 
@@ -276,6 +291,40 @@
           <span class="meta">2025</span>
         </div>
       </div>
+
+      <div class="gallery-pair">
+    
+    <!-- Detail A -->
+    <div class="gallery-item" onclick="openLightbox('WebP Images/21.webp', 'Detail View A')">
+      <div class="image-wrapper">
+        <img src="WebP Images/21.webp" alt="Detail A">
+      </div>
+      <div class="caption">
+        <span class="title">Detail A</span>
+      </div>
+    </div>
+
+    <!-- Detail B -->
+    <div class="gallery-item" onclick="openLightbox('WebP Images/22.webp', 'Detail View B')">
+      <div class="image-wrapper">
+        <img src="WebP Images/22.webp" alt="Detail B">
+      </div>
+      <div class="caption">
+        <span class="title">Detail B</span>
+      </div>
+    </div>
+
+        <!-- Detail B -->
+    <div class="gallery-item" onclick="openLightbox('WebP Images/23.webp', 'Detail View C')">
+      <div class="image-wrapper">
+        <img src="WebP Images/23.webp" alt="Detail C">
+      </div>
+      <div class="caption">
+        <span class="title">Detail C</span>
+      </div>
+    </div>
+
+  </div>
 
       <!-- Item 3 -->
       <div class="gallery-item" onclick="openLightbox('3Way Of Heart.jpg', '03   Way Of Heart')">
