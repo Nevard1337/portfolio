@@ -188,6 +188,13 @@
       color: var(--text-color);
     }
 
+    /* Container for 2 close-up images sharing 1 gallery slot */
+    .gallery-pair {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 side-by-side images on PC */
+      gap: 15px; /* Spacing between the two detail photos */
+    }
+
     /* Mobile Responsive Tweaks */
     @media (max-width: 768px) {
       :root {
@@ -195,6 +202,10 @@
       }
       .gallery {
         grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .gallery-pair {
+        grid-template-columns: 1fr; /* Stacks close-ups into 1 per row on phone */
         gap: 30px;
       }
       header {
